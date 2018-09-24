@@ -1,0 +1,18 @@
+import gobierno.*
+
+describe "tests de gobernabilidad" {
+
+	test "pasaron cosas" {
+		assert.throwsExceptionLike(pasaronCosas, {pueblo.sobrevivir(21)})
+	}
+
+	test "se lanza la excepcion no se puede" {
+		pueblo.sobrevivir(10)
+		assert.throwsExceptionLike(new NoSePuede(), {elMejorEquipo.gobernar(1)})
+	}
+	test "se lanza y se captura la excepcion no se puede" {
+		pueblo.sobrevivir(10)
+		pueblo.sobrevivir(1)
+		assert.that(pueblo.enojado())
+	}
+}
